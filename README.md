@@ -5,9 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #How to Set uo the developement env.
 
 1.npm i -g @angular/cli //Install angular-cli globally
+
 2.ng new my-app //Create New angular app
+
 3.cd my-app //cd to created app directory
+
 4.npm install electron --save-dev //Install electron and save as a dev dependency
+
 5.Create a main.js file and add following lines of code
 	const { app, BrowserWindow } = require("electron");
 	const path = require("path");
@@ -50,6 +54,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 	    createWindow();
 	  }
 	});
+
 6.Add following limes in package.json
 	"main": "main.js",
 	 "scripts": {
@@ -57,5 +62,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 	    "electron-prod": "ng build --base-href ./ --prod && electron ."
 	    ..
 	}
+
 7.Remove project name "outPath" property in angular.json("outputPath": "dist",)
+
 8.Change the <base href="/"> to <base href="./"> in src/index.html

@@ -55,13 +55,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 	  }
 	});
 
-6.Add following limes in package.json
-	"main": "main.js",
+6.Add following lines in package.json
+	
+  "main": "main.js",
 	 "scripts": {
 	     "electron": "ng build --base-href ./ && electron .",
 	    "electron-prod": "ng build --base-href ./ --prod && electron ."
 	    ..
 	}
+  
 
 7.Remove project name "outPath" property in angular.json("outputPath": "dist",)
 

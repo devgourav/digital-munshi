@@ -2,26 +2,60 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
-## Development server
+#How to Set uo the developement env.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.npm i -g @angular/cli //Install angular-cli globally
+2.ng new my-app //Create New angular app
+3.cd my-app //cd to created app directory
+4.npm install electron --save-dev //Install electron and save as a dev dependency
+5.Create a main.js file and add following lines of code
+	const { app, BrowserWindow } = require("electron");
+	const path = require("path");
+	const url = require("url");
 
-## Code scaffolding
+	let win;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+	function createWindow() {
+	  win = new BrowserWindow({ width: 800, height: 600 });
 
-## Build
+	  // load the dist folder from Angular
+	  win.loadURL(
+	    url.format({
+	      pathname: path.join(__dirname, `/dist/index.html`),
+	      protocol: "file:",
+	      slashes: true
+	    })
+	  );
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+	  // The following is optional and will open the DevTools:
+	  // win.webContents.openDevTools()
 
-## Running unit tests
+	  win.on("closed", () => {
+	    win = null;
+	  });
+	}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	app.on("ready", createWindow);
 
-## Running end-to-end tests
+	// on macOS, closing the window doesn't quit the app
+	app.on("window-all-closed", () => {
+	  if (process.platform !== "darwin") {
+	    app.quit();
+	  }
+	});
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+	// initialize the app's main window
+	app.on("activate", () => {
+	  if (win === null) {
+	    createWindow();
+	  }
+	});
+6.Add following limes in package.json
+	"main": "main.js",
+	 "scripts": {
+	     "electron": "ng build --base-href ./ && electron .",
+	    "electron-prod": "ng build --base-href ./ --prod && electron ."
+	    ..
+	}
+7.Remove project name "outPath" property in angular.json("outputPath": "dist",)
+8.Change the <base href="/"> to <base href="./"> in src/index.html

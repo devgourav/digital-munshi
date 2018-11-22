@@ -1,0 +1,47 @@
+$text-color:black;
+$text-color-light:white;
+$primary-color: #2196F3;
+$primary-color-dark:#0a69b5;
+
+.title-header{
+	text-align: left;
+	padding: 10px;
+	margin-bottom: 70px;
+	border-bottom: 2px solid black;
+	font-size: 1.5em;
+}
+
+
+#settings-wrapper{
+	font-family: 'Montserrat', sans-serif;
+	color:$text-color;
+}
+
+.settings-menu{
+	margin:auto;
+}
+
+.button-primary{
+	background-color: $primary-color;
+	padding:10px;
+	color:$text-color-light;
+	border-radius: 4px;
+	width: 200px;
+}
+.button-primary:hover{
+	background-color: $primary-color-dark;
+}
+
+.settings-list{
+	list-style: none;
+	padding: 0;
+
+	li{
+		margin-bottom: 20px;
+		a{
+			display: block;
+			text-decoration: none;
+		}
+	}
+	
+}

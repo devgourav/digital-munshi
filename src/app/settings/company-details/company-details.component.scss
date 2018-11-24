@@ -1,0 +1,60 @@
+$text-color-dark:black;
+$text-color-light:white;
+$primary-color: #2196F3;
+$primary-color-dark:#0a69b5;
+$positive-color: #4CAF50;
+$positive-color-dark: #37803a;
+$negative-color: #F44336;
+$negative-color-dark: #ea1c0d;
+
+#company-details-wrapper{
+	font-family: 'Montserrat', sans-serif;
+	color:$text-color-dark;
+}
+
+#action-buttons{
+	text-align: center;
+	margin:auto;
+}
+.title-header{
+	text-align: left;
+	padding: 10px;
+	margin-bottom: 70px;
+	border-bottom: 2px solid black;
+	font-size: 1.5em;
+}
+
+.input-form{
+	padding: 5px;
+	padding-left: 40px;
+	text-align: left;
+	margin: 0 auto;
+	font-weight: bold; 
+}
+
+.button-save{
+	background-color: $positive-color;
+	padding:10px;
+	color:$text-color-light;
+	border-radius: 4px;
+	width: 150px;
+	border:none;
+	z-index: 1;
+}
+.button-save:hover{
+	background-color: $positive-color-dark;
+}
+
+
+.button-cancel{
+	background-color: $negative-color;
+	padding:10px;
+	color:$text-color-light;
+	border-radius: 4px;
+	width: 150px;
+	border:none;
+	z-index: 1;
+}
+.button-cancel:hover{
+	background-color: $negative-color-dark;
+}

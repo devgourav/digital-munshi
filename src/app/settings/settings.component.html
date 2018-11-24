@@ -1,0 +1,13 @@
+<div class="settings-wrapper">
+	<div class="title-header">
+		<span id="header-text">Settings</span>
+	</div>
+	<div class="settings-menu">
+		<ul class="settings-list">
+			<li *ngFor="let settingItem of settingItems">
+				<a routerLink="{{settingItem}}" class="button-primary" >{{settingItem}}</a>
+			</li>
+		</ul>
+		
+	</div>
+</div>

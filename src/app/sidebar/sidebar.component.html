@@ -1,0 +1,11 @@
+<div id="sidebar-wrapper">
+	<div class="sidebar-info">
+		<span class="software-name">Digital Munshi</span>
+	</div>
+	<div class="sidebar-brand">
+		<span class="company-name">GRP Bazaar</span>
+	</div>
+	<ul class="sidebar-nav">
+		<li *ngFor="let sidebarItem of sidebarItems"><a routerLink="{{sidebarItem}}">{{sidebarItem}}</a></li>
+	</ul>
+</div>

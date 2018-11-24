@@ -1,17 +1,17 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/digital-munshi
+    working_directory: ~/Digital-Munshi
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
       - restore_cache:
-          key: digital-munshi-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: Digital-Munshi-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: digital-munshi-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: Digital-Munshi-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
-      - run: npm run e2e -- --no-progress --config=protractor-ci.conf.js
+      - run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+      - run: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js

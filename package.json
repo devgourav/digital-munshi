@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "ng build --aot --base-href ./ && electron .",
-    "electron-prod": "ng build --base-href ./ --prod && electron .",
-    "postinstall": "electron-builder install-app-deps"
+    "electron-prod": "ng build --base-href ./ --prod && electron ."
+    // ,"postinstall": "electron-builder install-app-deps"
   },
   "private": true,
   "dependencies": {
@@ -27,8 +27,10 @@
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
     "intl": "^1.2.5",
+    "jquery": "^3.3.1",
     "ngx-bootstrap": "^3.1.1",
     "ngx-electron": "^1.0.4",
+    "popper.js": "^1.14.5",
     "rxjs": "~6.3.3",
     "sqlite3": "^4.0.4",
     "zone.js": "~0.8.26"

@@ -26,13 +26,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS','Chrome'],
-    customLaunchers: {
-    	ChromeNoSandbox: {
-    		base: 'Chrome',
-    		flags: ['--no-sandbox']
-    	}
-    },
+    browsers: ['PhantomJS'],
     singleRun: true
   });
 };

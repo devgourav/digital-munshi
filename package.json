@@ -9,9 +9,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron": "ng build --aot --base-href ./ && electron .",
+    "electron": "ng build --aot && electron .",
     "electron-prod": "ng build --base-href ./ --prod && electron .",
-    "electron:windows": "npm run build && npx electron-builder build --windows"
+    "electron:windows": "npm run build && npx electron-builder build --windows",
+    "component": "ng generate component"
   },
   "private": true,
   "dependencies": {
@@ -37,7 +38,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.10.6",
-    "@angular/cli": "~7.0.5",
+    "@angular/cli": "^7.0.6",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "~2.8.8",
@@ -61,5 +62,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
-  }
+  },
+  "files": [
+    "*.js",
+    "build",
+    "node_modules"
+  ]
 }

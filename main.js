@@ -3,12 +3,11 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const url = require("url");
+const electron = require('electron')
 
-// require('electron-reload')(__dirname, {
-//   electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-//   hardResetMethod: 'exit'
-// });
-
+require('electron-reload')(__dirname,{
+	electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+});
 let win;
 
 function createWindow() {
@@ -17,7 +16,7 @@ function createWindow() {
   // load the dist folder from Angular
   win.loadURL(
     url.format({
-      pathname: path.join(__dirname, `/dist/index.html`),
+      pathname: path.join(__dirname, 'dist/index.html'),
       protocol: "file:",
       slashes: true
     })

@@ -2,10 +2,10 @@
 	<div class="title-header">
 		<span id="header-text">Settings</span>
 	</div>
-	<div class="settings-menu">
+	<div class="settings-menu row justify-content-center">
 		<ul class="settings-list">
 			<li *ngFor="let settingItem of settingItems">
-				<a routerLink="{{settingItem}}" class="button-primary" >{{settingItem}}</a>
+				<a routerLink="{{settingItem}}"><button class="btn button-primary">{{settingItem}}</button></a>
 			</li>
 		</ul>
 		

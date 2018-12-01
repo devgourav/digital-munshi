@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BillModule } from './bill/bill.module';
 
 import { AppRoutingModule,RoutingComponents } from './app-routing.module';
 import { NgxElectronModule } from 'ngx-electron';
@@ -15,7 +16,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxElectronModule
+    NgxElectronModule,
+    BillModule
   ],
   providers: [],
   bootstrap: [AppComponent],
